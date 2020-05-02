@@ -13,9 +13,8 @@ $(document).ready(function () {
     console.log(rand_num); 
 
     $("#game-field").load(inputNameSrc);
-    location.reload(true);
 
-    $("#input_num").click(function () { 
+    $("#input_num").live("click", function () { 
         
         playerTry++;
 
@@ -43,7 +42,7 @@ $(document).ready(function () {
         $('#rez').html(hints);
     });
 
-    $("#input_name").click(function () { 
+    $("#input_name").live("click", function() { 
         playersNamesArr.push( $('#name').val());
         $("#game-field").html(""); 
         $("#game-field").load(gameFieldSrc);
