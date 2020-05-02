@@ -8,7 +8,7 @@ $(document).ready(function () {
     var inputNameSrc = "res/fragments/name-form.html"
 
     var playersNamesArr = [];
-    var playersAnswArr = [],[];
+    var playersAnswArr = new Array(2);
 
     console.log(rand_num); 
 
