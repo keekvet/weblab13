@@ -8,11 +8,12 @@ $(document).ready(function () {
     var inputNameSrc = "res/fragments/name-form.html"
 
     var playersNamesArr = [];
-    //var playersAnswArr = [],[];
+    var playersAnswArr = [],[];
 
     console.log(rand_num); 
 
     $("#game-field").load(inputNameSrc);
+    location.reload(true);
 
     $("#input_num").click(function () { 
         
@@ -37,6 +38,7 @@ $(document).ready(function () {
                 hints += ' менше ' + num;
             }
             hints += '<br>'
+            playersAnswArr[--playersNamesArr.length].push(num);
         }
         $('#rez').html(hints);
     });
@@ -45,6 +47,7 @@ $(document).ready(function () {
         playersNamesArr.push( $('#name').val());
         $("#game-field").html(""); 
         $("#game-field").load(gameFieldSrc);
+        location.reload(true);
     });
 
 });
