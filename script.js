@@ -42,7 +42,9 @@ $(document).ready(function () {
     });
 
     $("#input_name").click(function () { 
-        playersNamesArr.push( $('#name').val()); 
+        playersNamesArr.push( $('#name').val());
+        $("#game-field").html = ""; 
+        $("#game-field").load(inputNameSrc);
     });
 
 });
