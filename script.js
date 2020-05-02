@@ -46,7 +46,6 @@ $(document).ready(function () {
         playersNamesArr.push( $('#name').val());
         $("#game-field").html(""); 
         $("#game-field").load(gameFieldSrc);
-        location.reload(true);
     });
 
 });
