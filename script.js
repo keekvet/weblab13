@@ -12,8 +12,6 @@ $(document).ready(function () {
 
     console.log(rand_num); 
 
-    $("#game-field").load(inputNameSrc);
-
     $("#input_num").on("click", function () { 
         
         playerTry++;
