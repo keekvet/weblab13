@@ -4,12 +4,15 @@ $(document).ready(function () {
     var rand_num = Math.floor(Math.random() * 100);
     var hints = '';
 
+    var gameFieldSrc = "res/fragments/game.html";
+    var inputNameSrc = "res/fragments/name-form.html"
+
     var playersNamesArr = [];
     //var playersAnswArr = [],[];
 
     console.log(rand_num); 
 
-    $("#game-field").load("res/fragments/game.html");
+    $("#game-field").load(inputNameSrc);
 
     $("#input_num").click(function () { 
         
@@ -22,6 +25,7 @@ $(document).ready(function () {
         if (num == rand_num) { 
  
             hints += 'Вірно, Ви перемоголи' + '<br>'; 
+            $("#winners_list").html += playersNamesArr[--playersNamesArr.length] + "<br>"
  
         } else {
             hints += 'Неправильно, дане число';
@@ -37,5 +41,8 @@ $(document).ready(function () {
         $('#rez').html(hints);
     });
 
+    $("#input_name").click(function () { 
+        playersNamesArr.push( $('#name').val()); 
+    });
 
 });
