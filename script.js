@@ -14,13 +14,13 @@ $(document).ready(function () {
 
     console.log(rand_num);
 
+    $("#game-field").load(gameFieldSrc);
   
 
-    $("#input_name").on("click", function () {
+    $("body").on("click", "#game-field", function () {
         playersAnswArr.push(new Array(1));
         playersNamesArr.push($('#name').val());
         $("#game-field").html("");
-        $("#game-field").load(gameFieldSrc);
     });
 
     $("body").on("click", "#input_num", function () {
@@ -30,14 +30,13 @@ $(document).ready(function () {
         console.log(num)
 
         if (num == rand_num) {
-
-            hints += 'Вірно, Ви перемоголи' + '<br>';
-            $("#winners_list").html(playersNamesArr[--playersNamesArr.length] + "<br>");
+            $("#winners_list").html(playersNamesArr[--playersNamesArr.length] 
+                + playersAnswArr[--playersNamesArr.length].length + "<br>");
             $("#game-field").load(inputNameSrc);
             inputName = $("#input_name");
-
+            alert("'Вірно, Ви перемоголи'")
         } else {
-            hints += 'Неправильно, дане число';
+            hints += 'Неправильно, згенероване число';
 
             if (num < rand_num) {
                 hints += ' більше ' + num;
