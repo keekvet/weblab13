@@ -32,7 +32,7 @@ $(document).ready(function () {
         if (num == rand_num) {
 
             hints += 'Вірно, Ви перемоголи' + '<br>';
-            $("#winners_list").html += playersNamesArr[--playersNamesArr.length] + "<br>"
+            $("#winners_list").html(playersNamesArr[--playersNamesArr.length] + "<br>");
             $("#game-field").load(inputNameSrc);
             inputName = $("#input_name");
 
