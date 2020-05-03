@@ -14,13 +14,15 @@ $(document).ready(function () {
 
     console.log(rand_num);
 
-    $("#game-field").load(gameInputSrc);
+    $("#game-field").load(gameNameSrc);
   
 
     $("body").on("click", "#game-field", function () {
         playersAnswArr.push(new Array(1));
         playersNamesArr.push($('#name').val());
         $("#game-field").html("");
+        $("#game-field").load(gameFieldSrc);
+
     });
 
     $("body").on("click", "#input_num", function () {
