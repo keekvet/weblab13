@@ -25,6 +25,7 @@ $(document).ready(function () {
         $("#game-field").html("");
         $("#game-field").load(gameFieldSrc);
         hints = '';
+        inputNumCount = 0;
     });
 
     $("body").on("click", "#input_num", function () {
