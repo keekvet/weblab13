@@ -17,7 +17,7 @@ $(document).ready(function () {
     $("#game-field").load(inputNameSrc);
   
 
-    $("body").on("click", "#input-name", function () {
+    $("body").on("click", "#input_name", function () {
         playersAnswArr.push(new Array(1));
         playersNamesArr.push($('#name').val());
         $("#game-field").html("");
