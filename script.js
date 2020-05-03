@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
 
-    var rand_num = Math.floor(Math.random() * 100);
+    var rand_num = 0;  
     var hints = '';
     var winners = '';
     var inputName;
@@ -19,6 +19,7 @@ $(document).ready(function () {
 
 
     $("body").on("click", "#input_name", function () {
+        rand_num = Math.floor(Math.random() * 100);
         playersAnswArr.push(new Array(1));
         playersNamesArr.push($('#name').val());
         $("#game-field").html("");
