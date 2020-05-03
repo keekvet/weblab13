@@ -10,13 +10,14 @@ $(document).ready(function () {
     var inputNameSrc = "res/fragments/name-form.html"
 
     var playersNamesArr = [];
-    var playersAnswArr = new Array(2);
+    var playersAnswArr = [];
 
     console.log(rand_num);
 
   
 
     $("#input_name").on("click", function () {
+        playersAnswArr.push(new Array(1));
         playersNamesArr.push($('#name').val());
         $("#game-field").html("");
         $("#game-field").load(gameFieldSrc);
