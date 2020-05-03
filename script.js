@@ -20,38 +20,36 @@ $(document).ready(function () {
         playersNamesArr.push($('#name').val());
         $("#game-field").html("");
         $("#game-field").load(gameFieldSrc);
-        inputNum = $("#input_num");
-
-
-        inputNum.on("click", function () {
-
-            playerTry++;
-    
-            var num = $('#you_num').val();
-    
-            console.log(num)
-    
-            if (num == rand_num) {
-    
-                hints += 'Вірно, Ви перемоголи' + '<br>';
-                $("#winners_list").html += playersNamesArr[--playersNamesArr.length] + "<br>"
-                $("#game-field").load(inputNameSrc);
-                inputName = $("#input_name");
-    
-            } else {
-                hints += 'Неправильно, дане число';
-    
-                if (num < rand_num) {
-                    hints += ' більше ' + num;
-                }
-                else {
-                    hints += ' менше ' + num;
-                }
-                hints += '<br>'
-                playersAnswArr[--playersNamesArr.length].push(num);
-            }
-            $('#rez').html(hints);
-        });
+        
     });
 
+    $("#input_num").on("click", function () {
+
+        playerTry++;
+
+        var num = $('#you_num').val();
+
+        console.log(num)
+
+        if (num == rand_num) {
+
+            hints += 'Вірно, Ви перемоголи' + '<br>';
+            $("#winners_list").html += playersNamesArr[--playersNamesArr.length] + "<br>"
+            $("#game-field").load(inputNameSrc);
+            inputName = $("#input_name");
+
+        } else {
+            hints += 'Неправильно, дане число';
+
+            if (num < rand_num) {
+                hints += ' більше ' + num;
+            }
+            else {
+                hints += ' менше ' + num;
+            }
+            hints += '<br>'
+            playersAnswArr[--playersNamesArr.length].push(num);
+        }
+        $('#rez').html(hints);
+    });
 });
