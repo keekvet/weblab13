@@ -17,7 +17,7 @@ $(document).ready(function () {
     $("#game-field").load(inputNameSrc);
   
 
-    $("body").on("click", "#game-field", function () {
+    $("body").on("click", "#input-name", function () {
         playersAnswArr.push(new Array(1));
         playersNamesArr.push($('#name').val());
         $("#game-field").html("");
@@ -32,8 +32,8 @@ $(document).ready(function () {
         console.log(num)
 
         if (num == rand_num) {
-            $("#winners_list").html(playersNamesArr[--playersNamesArr.length] 
-                + playersAnswArr[--playersNamesArr.length].length + "<br>");
+            $("#winners_list").html("" + playersNamesArr[playersNamesArr.length-1] + " |спроб: " 
+                + playersAnswArr[playersNamesArr.length-1].length + "<br>");
             $("#game-field").load(inputNameSrc);
             inputName = $("#input_name");
             alert("'Вірно, Ви перемоголи'")
