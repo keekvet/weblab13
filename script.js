@@ -20,12 +20,10 @@ $(document).ready(function () {
         playersNamesArr.push($('#name').val());
         $("#game-field").html("");
         $("#game-field").load(gameFieldSrc);
-        
+        playersAnswArr.push(new Array(1));
     });
 
     $("body").on("click", "#input_num", function () {
-
-        playerTry++;
 
         var num = $('#you_num').val();
 
