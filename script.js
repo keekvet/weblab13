@@ -23,7 +23,7 @@ $(document).ready(function () {
         
     });
 
-    $("#input_num").on("click", function () {
+    $("body").on("click", "#input_num", function () {
 
         playerTry++;
 
