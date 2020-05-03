@@ -4,7 +4,7 @@ $(document).ready(function () {
     var rand_num = Math.floor(Math.random() * 100);
     var hints = '';
     var inputName;
-    var inputNum;
+    var inputNumCount = 0;
 
     var gameFieldSrc = "res/fragments/game.html";
     var inputNameSrc = "res/fragments/name-form.html"
@@ -20,7 +20,6 @@ $(document).ready(function () {
         playersNamesArr.push($('#name').val());
         $("#game-field").html("");
         $("#game-field").load(gameFieldSrc);
-        playersAnswArr.push(new Array(1));
     });
 
     $("body").on("click", "#input_num", function () {
@@ -46,7 +45,7 @@ $(document).ready(function () {
                 hints += ' менше ' + num;
             }
             hints += '<br>'
-            playersAnswArr[--playersNamesArr.length].push(num);
+            playersAnswArr[playersNamesArr.length - 1][inputNumCount++] = num;
         }
         $('#rez').html(hints);
     });
