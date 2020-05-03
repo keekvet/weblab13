@@ -14,7 +14,7 @@ $(document).ready(function () {
 
     console.log(rand_num);
 
-    $("#input_num").on("click", function () {
+   inputNum.on("click", function () {
 
         playerTry++;
 
