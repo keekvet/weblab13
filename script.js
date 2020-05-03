@@ -3,6 +3,7 @@ $(document).ready(function () {
 
     var rand_num = Math.floor(Math.random() * 100);
     var hints = '';
+    var winners = '';
     var inputName;
     var inputNumCount = 0;
 
@@ -15,14 +16,14 @@ $(document).ready(function () {
     console.log(rand_num);
 
     $("#game-field").load(inputNameSrc);
-  
+
 
     $("body").on("click", "#input_name", function () {
         playersAnswArr.push(new Array(1));
         playersNamesArr.push($('#name').val());
         $("#game-field").html("");
         $("#game-field").load(gameFieldSrc);
-
+        hints = '';
     });
 
     $("body").on("click", "#input_num", function () {
@@ -32,8 +33,9 @@ $(document).ready(function () {
         console.log(num)
 
         if (num == rand_num) {
-            $("#winners_list").html("" + playersNamesArr[playersNamesArr.length-1] + " |спроб: " 
-                + playersAnswArr[playersNamesArr.length-1].length + "<br>");
+            winners += "" + playersNamesArr[playersNamesArr.length - 1] + " спроб: "
+                + playersAnswArr[playersNamesArr.length - 1].length + "<br>";
+            $("#winners_list").html(winners);
             $("#game-field").load(inputNameSrc);
             inputName = $("#input_name");
             alert("'Вірно, Ви перемоголи'")
