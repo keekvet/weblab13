@@ -14,7 +14,7 @@ $(document).ready(function () {
 
     console.log(rand_num);
 
-    $("#game-field").load(gameNameSrc);
+    $("#game-field").load(inputNameSrc);
   
 
     $("body").on("click", "#game-field", function () {
